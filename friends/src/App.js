@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
-import Friend from './components/friend';
+
+import Friend from './components/Friend/friend';
 
 
 class App extends React.Component {

@@ -1,0 +1,57 @@
+.friend-card{
+    width:300px;
+    /* height:120px; */
+    background-color: lightcoral;
+    margin:20px;
+    -webkit-transition: opacity 0.2s; /* Safari prior 6.1 */
+    transition: opacity 0.5s;
+
+}
+
+.friend-card:hover{
+    opacity:0.8;
+    cursor: pointer;
+}
+
+h1{
+    padding:0;
+    margin:0;
+}
+
+
+.contact-info{
+    list-style: none;
+    text-align: left;
+    color:white;
+    font-size:0.5em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.contact-info li{
+   font-size:1.5em;
+   height:20px;
+}
+
+.contact-edits{
+    list-style: none;
+    display:flex;
+    justify-content: space-evenly;
+    
+
+}
+
+.contact-edits li{
+    font-size:0.9em;
+    color: yellow;
+}
+
+.contact-edits li:hover{
+    color:red;
+}
+.friend-card .header{
+        background-color: lightgreen;
+        font-size: 1em;
+}

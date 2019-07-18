@@ -1,0 +1,10 @@
+.edit-form input {
+    width:100%;
+    box-sizing: border-box;
+    border:none;
+    border-bottom:1px solid black;
+}
+
+.edit-form button{
+    
+}
