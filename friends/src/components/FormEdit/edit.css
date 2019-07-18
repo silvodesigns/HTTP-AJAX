@@ -4,7 +4,19 @@
     border:none;
     border-bottom:1px solid black;
 }
+.edit-form input:focus{
+    outline:none;
+    background-color: lightblue;
+}
 
 .edit-form button{
-    
+    border: none;
+    background-color:yellow;
+    color: lightgreen;
+    width:100%;
+
+}
+
+.edit-form button:hover{
+    cursor: pointer;
 }
