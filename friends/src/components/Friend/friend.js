@@ -22,7 +22,7 @@ function Friend(props) {
                                     <li>hide</li>
                                     <li>delete</li>
                                 </ul>
-                                <FormEdit/>
+                                <FormEdit props={props} />
                         </div>
                         
                         

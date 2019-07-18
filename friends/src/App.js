@@ -7,8 +7,8 @@ import Friend from './components/Friend/friend';
 
 
 class App extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state={
       friends: []
 
@@ -23,22 +23,12 @@ class App extends React.Component {
 
   }
 
-  editContact= (id, update) =>{
-
-    axios
-    .put(`http://localhost:5000/friends/${id}`, update)
-    .then(response => console.log(response))
-    .catch(err => console.log(err));
-
-  };
-  
-
 
   render(){
   
     return (
       <div className="App">
-          <Friend friend={this.state.friends} />
+          <Friend friend={this.state.friends}  props={this.props}/>
       </div>
     );
 
