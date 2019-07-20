@@ -36,8 +36,10 @@ handleFocus = e =>{
    
 }
 
-handleEdit = () =>{
+handleEdit = e =>{
     //handleEdit of form onSubmit only
+
+    e.preventDefault();
     const id = this.props.id;
     const dataToSend = this.state.contact;
     dataToSend.id = id;
@@ -109,7 +111,7 @@ render(){
                         />
 
 
-                    <button>UPDATE</button>
+                    <button type="submit">UPDATE</button>
                 </form>
             )
         } 
