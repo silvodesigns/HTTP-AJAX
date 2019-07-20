@@ -1,6 +1,5 @@
 .friend-card{
     width:300px;
-    /* height:120px; */
     background-color: lightcoral;
     margin:20px;
     -webkit-transition: opacity 0.2s; /* Safari prior 6.1 */

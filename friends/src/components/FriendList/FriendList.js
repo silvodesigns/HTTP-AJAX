@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './friend.css';
-import FormEdit from '../FormEdit/edit';
+// import FormEdit from '../FormEdit/edit';
 
 // {"id":1,"name":"Ben","age":30,"email":"ben@lambdaschool.com"}
 
-function Friend(props) {
+function FriendList(props) {
 
-    console.log(props.friend,"from Friend");
+    console.log(props,"from Friend");
 
             return(
                 <div className="contacts-frame">
-                        {props.friend.map( f => 
+                        {props.list.map( f => 
                         <div className="friend-card" key={f.id}>
                                 <div className="header"><h1>{f.name}</h1></div>
                                 <ul className="contact-info">
@@ -18,11 +19,11 @@ function Friend(props) {
                                     <li>Email: {f.email}</li>
                                 </ul>
                                 <ul className="contact-edits">
-                                    <li>edit</li>
+                                    <li><Link to={`/${f.id}`}>edit</Link></li>
                                     <li>hide</li>
                                     <li>delete</li>
                                 </ul>
-                                <FormEdit props={props} />
+                                {/* <FormEdit props={props} id={f.id} /> */}
                         </div>
                         
                         
@@ -36,4 +37,7 @@ function Friend(props) {
 
 
 
-export default Friend;
+
+
+
+export default FriendList;

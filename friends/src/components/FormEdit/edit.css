@@ -1,15 +1,19 @@
-.edit-form input {
+.hide{
+    display:none;
+}
+
+form[class^="edit-"] input {
     width:100%;
     box-sizing: border-box;
     border:none;
     border-bottom:1px solid black;
 }
-.edit-form input:focus{
+form[class^="edit-"] input:focus{
     outline:none;
     background-color: lightblue;
 }
 
-.edit-form button{
+form[class^="edit-"] button{
     border: none;
     background-color:yellow;
     color: lightgreen;
@@ -17,6 +21,6 @@
 
 }
 
-.edit-form button:hover{
+form[class^="edit-"] button:hover{
     cursor: pointer;
 }

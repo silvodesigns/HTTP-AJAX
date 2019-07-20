@@ -8,10 +8,14 @@ class FormEdit extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            id: "",
-            name: "",
-            email: "",
-            age:""
+
+            contact: {
+                    id: "",
+                    name: "",
+                    email: "",
+                    age:""
+
+            }
 
         }
       
@@ -21,7 +25,7 @@ class FormEdit extends React.Component {
 
 putMessage = e =>{
     e.preventDefault();
-    this.editContact()
+    this.handleEdit();
    
 }
 
@@ -31,10 +35,20 @@ handleFocus = e =>{
    
 }
 
-
-handleChange= e =>{
-   this.setState({[e.target.name]: e.target.value})
+handleEdit = (id) =>{
+    this.editContact(id, this.state.contact)
 }
+
+
+handleChange = e => {
+    this.setState({
+      contact: {
+        ...this.state.contact,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
 
 
 
@@ -46,12 +60,12 @@ editContact= (id, update) =>{
     .catch(err => console.log(err));
 
   };
-  
+
 
 
 render(){
             return(
-                <form className="edit-form" onSubmit={this.handleEdit}>
+                <form  id={`edit-form${this.props.id}`} className={`edit-form${this.props.id} hide`}  onSubmit={this.handleEdit(this.props.id)}>
                     <input 
                         type="text" 
                         name="name"  
@@ -81,7 +95,7 @@ render(){
                         />
 
 
-                    <button>SAVE</button>
+                    <button onClick={this.putMessage}>SAVE</button>
                 </form>
             )
         } 
