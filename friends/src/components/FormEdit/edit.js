@@ -2,7 +2,6 @@ import React from 'react';
 import './edit.css';
 import axios from 'axios';
 
-// {"id":1,"name":"Ben","age":30,"email":"ben@lambdaschool.com"}
 
 class FormEdit extends React.Component {
     constructor(props){
@@ -10,7 +9,6 @@ class FormEdit extends React.Component {
         this.state ={
 
             contact: {
-                    id: "",
                     name: "",
                     email: "",
                     age:""
@@ -18,29 +16,40 @@ class FormEdit extends React.Component {
             }
 
         }
+
+      
       
     }
 
 
 
-putMessage = e =>{
-    e.preventDefault();
-    this.handleEdit();
+// putMessage = e =>{
+//     e.preventDefault();
+//     this.handleEdit();
    
-}
+// }
 
 
 handleFocus = e =>{
+    //simply prevents default focus behavior of inputs
     e.preventDefault();
    
 }
 
-handleEdit = (id) =>{
-    this.editContact(id, this.state.contact)
+handleEdit = () =>{
+    //handleEdit of form onSubmit only
+    const id = this.props.id;
+    const dataToSend = this.state.contact;
+    dataToSend.id = id;
+    this.editContact(id, dataToSend);
+
 }
 
 
 handleChange = e => {
+
+    //changes the state of the application as the user types in the fields
+
     this.setState({
       contact: {
         ...this.state.contact,
@@ -56,16 +65,21 @@ editContact= (id, update) =>{
 
     axios
     .put(`http://localhost:5000/friends/${id}`, update)
-    .then(response => console.log(response))
+    .then(response => console.log(response,"it has been updated at last"))
     .catch(err => console.log(err));
+
+
 
   };
 
 
 
 render(){
+
+
             return(
-                <form  id={`edit-form${this.props.id}`} className={`edit-form${this.props.id} hide`}  onSubmit={this.handleEdit(this.props.id)}>
+                <form  id="edit-form" className="edit-form"  onSubmit={this.handleEdit}>
+
                     <input 
                         type="text" 
                         name="name"  
@@ -95,7 +109,7 @@ render(){
                         />
 
 
-                    <button onClick={this.putMessage}>SAVE</button>
+                    <button>UPDATE</button>
                 </form>
             )
         } 

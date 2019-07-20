@@ -1,5 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import FriendCard from '../FriendCard/FriendCard';
+
+
+
 import './friend.css';
 
 class Friend extends React.Component {
@@ -17,7 +21,7 @@ render(){
                     return (
                     
                         <div className="contacts-frame">
-                            <FriendCard  current={this.props.current[`${index}`]}/>
+                           <Route   render={ props => <FriendCard  {...props}  current={this.props.current[`${index}`]}/> } />
                         </div>
                     )
 

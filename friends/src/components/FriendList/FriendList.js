@@ -5,7 +5,7 @@ import './friend.css';
 
 function FriendList(props) {
 
-    console.log(props.list,"from FriendList");
+ 
 
 const data = Array.from(props.list);
 

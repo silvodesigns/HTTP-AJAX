@@ -1,9 +1,12 @@
 import React from 'react';
+import FormEdit from '../FormEdit/edit';
+
+import './card.css';
 
 
 function FriendCard(props){
         
-        console.log(props.current,"from card");
+
 return(
         
      
@@ -13,12 +16,7 @@ return(
                     <li>Age:    {props.current ? (props.current.age):(null)} </li>
                     <li>Email:  {props.current ? (props.current.email):(null)}</li>
                 </ul>
-                {/* <ul className="contact-edits">
-                    <li><Link to={`/${f.id}`}>edit</Link></li>
-                    <li>hide</li>
-                    <li>delete</li>
-                </ul>  */}
-
+                <FormEdit  update={props.current}  id={props.match.params.id}/>
         </div>
    )   
 }
