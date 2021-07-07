@@ -1,0 +1,26 @@
+.hide{
+    display:none;
+}
+
+form[class^="edit-"] input {
+    width:100%;
+    box-sizing: border-box;
+    border:none;
+    border-bottom:1px solid black;
+}
+form[class^="edit-"] input:focus{
+    outline:none;
+    background-color: lightblue;
+}
+
+form[class^="edit-"] button{
+    border: none;
+    background-color:yellow;
+    color: lightgreen;
+    width:100%;
+
+}
+
+form[class^="edit-"] button:hover{
+    cursor: pointer;
+}
